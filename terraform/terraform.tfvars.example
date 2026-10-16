@@ -1,0 +1,6 @@
+# Example Terraform configuration variables
+# Copy this file to terraform.tfvars to customize values
+
+aws_region   = "ap-south-1"
+cluster_name = "taskboard-eks"
+environment  = "dev"
