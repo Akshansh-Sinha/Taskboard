@@ -37,8 +37,9 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Build images
         run: |
-          docker build -t ghcr.io/${{ github.repository_owner }}/taskboard-backend:${{ github.sha }} ./backend
-          docker build -t ghcr.io/${{ github.repository_owner }}/taskboard-frontend:${{ github.sha }} ./frontend
+          OWNER=$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')
+          docker build -t ghcr.io/${OWNER}/taskboard-backend:${{ github.sha }} ./backend
+          docker build -t ghcr.io/${OWNER}/taskboard-frontend:${{ github.sha }} ./frontend
       - name: Scan backend
         uses: aquasecurity/trivy-action@v0.36.0
         with:
@@ -56,8 +57,8 @@ jobs:
       - name: Push images
         run: |
           OWNER=$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')
-          docker build -t ghcr.io/${OWNER}/taskboard-backend:${{ github.sha }} ./backend
-          docker build -t ghcr.io/${OWNER}/taskboard-frontend:${{ github.sha }} ./frontend
+          docker push ghcr.io/${OWNER}/taskboard-backend:${{ github.sha }}
+          docker push ghcr.io/${OWNER}/taskboard-frontend:${{ github.sha }}
   deploy:
     if: github.ref == 'refs/heads/main'
     needs: build-scan-push
