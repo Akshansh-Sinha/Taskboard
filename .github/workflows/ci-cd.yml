@@ -59,23 +59,23 @@ jobs:
           OWNER=$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')
           docker push ghcr.io/${OWNER}/taskboard-backend:${{ github.sha }}
           docker push ghcr.io/${OWNER}/taskboard-frontend:${{ github.sha }}
-deploy:
-  if: github.ref == 'refs/heads/main'
-  needs: build-scan-push
-  runs-on: self-hosted
-  permissions:
-    contents: read
-    packages: read
-  steps:
-    - uses: actions/checkout@v4
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    needs: build-scan-push
+    runs-on: self-hosted
+    permissions:
+      contents: read
+      packages: read
+    steps:
+      - uses: actions/checkout@v4
 
-    - uses: azure/setup-helm@v4
+      - uses: azure/setup-helm@v4
 
-    - name: Deploy with Helm
-      run: |
-        helm upgrade --install taskboard ./helm/taskboard \
-          -n taskboard --create-namespace \
-          --set backend.tag=${{ github.sha }} \
-          --set frontend.tag=${{ github.sha }} \
-          --set backend.image=ghcr.io/${{ github.repository_owner }}/taskboard-backend \
-          --set frontend.image=ghcr.io/${{ github.repository_owner }}/taskboard-frontend
+      - name: Deploy with Helm
+        run: |
+          helm upgrade --install taskboard ./helm/taskboard \
+            -n taskboard --create-namespace \
+            --set backend.tag=${{ github.sha }} \
+            --set frontend.tag=${{ github.sha }} \
+            --set backend.image=ghcr.io/${{ github.repository_owner }}/taskboard-backend \
+            --set frontend.image=ghcr.io/${{ github.repository_owner }}/taskboard-frontend
