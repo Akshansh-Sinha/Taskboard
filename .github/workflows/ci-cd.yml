@@ -68,21 +68,10 @@ jobs:
       - uses: actions/checkout@v4
       - uses: azure/setup-helm@v4
       - name: Configure kubectl
-        env:
-          KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
+        env: {KUBE_CONFIG_DATA: '${{ secrets.KUBE_CONFIG_DATA }}'}
         run: |
-          set -euo pipefail
-          mkdir -p "$HOME/.kube"
-
-          if ! printf '%s' "$KUBE_CONFIG_DATA" |
-              base64 --decode > "$HOME/.kube/config"; then
-            echo "::error::Secret is not valid Base64. Regenerate and replace it."
-            exit 1
-          fi
-
-          chmod 600 "$HOME/.kube/config"
-          kubectl config current-context
-          kubectl cluster-info
+          mkdir -p ~/.kube
+          echo "$KUBE_CONFIG_DATA" | base64 -d > ~/.kube/config
       - name: Deploy with Helm
         run: |
           helm upgrade --install taskboard ./helm/taskboard -n taskboard --create-namespace \
