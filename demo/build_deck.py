@@ -164,7 +164,7 @@ def build_presentation():
             bx = 1.3
             by += 0.45
 
-    # Author / Metadata Footer Box
+    # Author / Project Details Box
     meta_box = s1.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(1.3), Inches(4.8), Inches(10.7), Inches(1.4))
     meta_box.fill.solid()
     meta_box.fill.fore_color.rgb = BG_COLOR
@@ -172,13 +172,13 @@ def build_presentation():
     tf = meta_box.text_frame
     tf.word_wrap = True
     p = tf.paragraphs[0]
-    p.text = "Deliverables & Evaluation Status"
+    p.text = "Project Summary"
     p.font.size = Pt(12)
     p.font.bold = True
     p.font.color.rgb = ACCENT_CYAN
 
     p_body = tf.add_paragraph()
-    p_body.text = "• 100/100 Evaluation Rubric Complete across Modules M1 through M10\n• Full Automation: Git Push → Pytest (9/9) → Vite Build → Trivy Security Gate → GHCR → Kubernetes & Helm Deploy\n• Live Observability: Prometheus scrape endpoint (/metrics) & Preconfigured Grafana Dashboard"
+    p_body.text = "• Complete end-to-end implementation covering all modules from M1 to M10\n• CI/CD pipeline runs automated Pytest tests, builds Vite frontend, performs Trivy vulnerability scans, and pushes images to GHCR\n• Deployed on Kubernetes using Helm with Ingress, HPA, and Prometheus metrics scraping"
     p_body.font.size = Pt(10.5)
     p_body.font.color.rgb = TEXT_LIGHT
 
@@ -561,7 +561,7 @@ def build_presentation():
     # -------------------------------------------------------------
     s9 = prs.slides.add_slide(blank_layout)
     apply_slide_background(s9)
-    add_header(s9, "MODULE M10 • DEMO & FINAL SUBMISSION", "Walkthrough Video & Verification Summary", "100/100 Evaluation Checklist, Recorded Execution, and GitHub Repository State")
+    add_header(s9, "MODULE M10 • DEMO & SUBMISSION", "Walkthrough & Project Summary", "Overview of completed implementation and recorded execution across all modules")
     add_nav_footer(s9, 7)
 
     # 4 Cards Layout

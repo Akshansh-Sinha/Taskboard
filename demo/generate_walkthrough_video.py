@@ -167,14 +167,14 @@ def run_script():
     # ---------------------------------------------------------
     # SCENE 1: Welcome & Overview
     # ---------------------------------------------------------
-    player.set_header("TaskBoard DevOps Capstone — Live Command Execution Walkthrough", "OVERVIEW")
+    player.set_header("TaskBoard DevOps Project — Command Walkthrough", "OVERVIEW")
     player.add_line("================================================================================", PROMPT_USER, True)
-    player.add_line("    TASKBOARD CLOUD-NATIVE DEVOPS CAPSTONE — LIVE VERIFICATION WALKTHROUGH      ", TEXT_WHITE, True)
-    player.add_line("    Candidate: Akshansh Sinha | Target: 100/100 Evaluation Rubric               ", SECTION_PURPLE, True)
+    player.add_line("         TASKBOARD DEVOPS CAPSTONE — LIVE VERIFICATION WALKTHROUGH              ", TEXT_WHITE, True)
+    player.add_line("         Repository: Akshansh-Sinha/Taskboard                                   ", SECTION_PURPLE, True)
     player.add_line("================================================================================", PROMPT_USER, True)
     player.add_line("")
     player.add_line("[*] Stack: FastAPI + PostgreSQL + React 18 + Docker + Trivy + Terraform + Helm", TEXT_MUTED)
-    player.add_line("[*] Verified Modules: M1 through M10 (Automated Tests, CI/CD, IaC, Observability)", TEXT_MUTED)
+    player.add_line("[*] Modules covered: M1 - M10 (Application, Tests, Docker, CI/CD, K8s, Metrics)", TEXT_MUTED)
     player.add_line("")
     player.pause(2.5)
 
@@ -362,27 +362,27 @@ def run_script():
     # SCENE 10: Final Scorecard & Submission Summary
     # ---------------------------------------------------------
     player.clear()
-    player.set_header("DevOps Final Capstone — Submission Scorecard", "100/100 COMPLETE")
+    player.set_header("DevOps Capstone — Modules Summary", "SUMMARY")
     player.add_line("================================================================================", PASS_GREEN, True)
-    player.add_line("          SESSION 21 DEVOPS FINAL CAPSTONE — EVALUATION MATRIX SCORECARD        ", TEXT_WHITE, True)
+    player.add_line("                 TASKBOARD DEVOPS CAPSTONE — MODULE SUMMARY                     ", TEXT_WHITE, True)
     player.add_line("================================================================================", PASS_GREEN, True)
     player.add_line("")
     scores = [
-        ("M1", "Application (FastAPI + React + PostgreSQL + Alembic)", "10 / 10 pts", PASS_GREEN),
-        ("M2", "Testing (Pytest 9/9 passing + isolated in-memory DB)", "10 / 10 pts", PASS_GREEN),
-        ("M3", "Git & GitHub Hygiene (clean tree, atomic commits)", "5 / 5 pts", PASS_GREEN),
-        ("M4", "Docker (Multi-stage builds, non-root users, compose)", "10 / 10 pts", PASS_GREEN),
-        ("M5", "CI/CD Pipeline (GitHub Actions + SHA tag publishing)", "15 / 15 pts", PASS_GREEN),
-        ("M6", "DevSecOps (Trivy scanner, 0 HIGH/CRIT CVEs)", "5 / 5 pts", PASS_GREEN),
-        ("M7", "Terraform AWS (VPC, Multi-AZ subnets, EKS Cluster)", "15 / 15 pts", PASS_GREEN),
-        ("M8", "Kubernetes + Helm (Deployments, Ingress, HPA, lint: 0)", "15 / 15 pts", PASS_GREEN),
-        ("M9", "Observability (Prometheus /metrics + Grafana dashboard)", "10 / 10 pts", PASS_GREEN),
-        ("M10", "Presentation & Recorded Walkthrough Deliverables", "5 / 5 pts", PASS_GREEN)
+        ("M1", "Application (FastAPI + React + PostgreSQL + Alembic)", "Complete", PASS_GREEN),
+        ("M2", "Testing (Pytest 9/9 passing + isolated in-memory DB)", "Complete", PASS_GREEN),
+        ("M3", "Git & GitHub Hygiene (clean tree, atomic commits)", "Complete", PASS_GREEN),
+        ("M4", "Docker (Multi-stage builds, non-root users, compose)", "Complete", PASS_GREEN),
+        ("M5", "CI/CD Pipeline (GitHub Actions + SHA tag publishing)", "Complete", PASS_GREEN),
+        ("M6", "DevSecOps (Trivy scanner, 0 HIGH/CRIT CVEs)", "Complete", PASS_GREEN),
+        ("M7", "Terraform AWS (VPC, Multi-AZ subnets, EKS Cluster)", "Complete", PASS_GREEN),
+        ("M8", "Kubernetes + Helm (Deployments, Ingress, HPA, lint: 0)", "Complete", PASS_GREEN),
+        ("M9", "Observability (Prometheus /metrics + Grafana dashboard)", "Complete", PASS_GREEN),
+        ("M10", "Presentation & Recorded Walkthrough Deliverables", "Complete", PASS_GREEN)
     ]
     for mod, desc, pts, col in scores:
         player.add_line(f"  [✓] {mod:<4} | {desc:<58} | {pts}", col, True)
     player.add_line("")
-    player.add_line("  OVERALL TOTAL: 100 / 100 POINTS (EXCELLENT / DISTINCTION)", PASS_GREEN, True)
+    player.add_line("  ALL MODULES (M1 - M10) VERIFIED AND COMPLETED SUCCESSFULLY", PASS_GREEN, True)
     player.add_line("================================================================================", PASS_GREEN, True)
     player.add_line("Walkthrough recording complete. Output saved to demo/taskboard_command_walkthrough.mp4", PROMPT_USER)
     player.pause(4.0)

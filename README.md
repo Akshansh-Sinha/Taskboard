@@ -813,15 +813,10 @@ That is the actual objective of Session 21.
 
 ---
 
-## 16. Demo & Presentation Deliverables
+## 16. Demo & Presentation
 
-The complete set of capstone deliverables is available in the [`demo/`](demo/) directory:
+The project presentation and walkthrough video are located in [`demo/`](demo/):
 
-- **Interactive Presentation Deck:** [`demo/Taskboard_DevOps_Architecture_and_Walkthrough.pptx`](demo/Taskboard_DevOps_Architecture_and_Walkthrough.pptx) (also mirrored at [`Taskboard_Presentation.pptx`](Taskboard_Presentation.pptx))
-- **Command Walkthrough Video (1080p Full HD):** [`demo/taskboard_command_walkthrough.mp4`](demo/taskboard_command_walkthrough.mp4)
-- **High-Resolution Architectural Diagrams:** [`demo/assets/`](demo/assets/)
-  - System Architecture: [`demo/assets/diagram_system_architecture.png`](demo/assets/diagram_system_architecture.png)
-  - CI/CD & DevSecOps: [`demo/assets/diagram_cicd_pipeline.png`](demo/assets/diagram_cicd_pipeline.png)
-  - AWS Terraform Topology: [`demo/assets/diagram_aws_terraform.png`](demo/assets/diagram_aws_terraform.png)
-  - Kubernetes & Helm: [`demo/assets/diagram_k8s_helm.png`](demo/assets/diagram_k8s_helm.png)
-  - Observability & Triage: [`demo/assets/diagram_observability_troubleshooting.png`](demo/assets/diagram_observability_troubleshooting.png)
+- Presentation slides: [`demo/Taskboard_DevOps_Architecture_and_Walkthrough.pptx`](demo/Taskboard_DevOps_Architecture_and_Walkthrough.pptx) (also copied to [`Taskboard_Presentation.pptx`](Taskboard_Presentation.pptx))
+- Terminal walkthrough video: [`demo/taskboard_command_walkthrough.mp4`](demo/taskboard_command_walkthrough.mp4)
+- Architecture diagrams: [`demo/assets/`](demo/assets/)
