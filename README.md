@@ -79,6 +79,10 @@ session21-devops-capstone-final/
 ├── k8s/                      # namespace/bootstrap manifests
 ├── monitoring/               # Prometheus/Grafana values
 ├── troubleshooting/          # deliberately broken manifests
+├── demo/                     # Presentation deck, architecture diagrams & video walkthrough
+│   ├── Taskboard_DevOps_Architecture_and_Walkthrough.pptx
+│   ├── taskboard_command_walkthrough.mp4
+│   └── assets/               # High-resolution architectural diagrams
 ├── scripts/                  # load-test helpers
 └── .github/workflows/        # CI/CD
 ```
@@ -806,3 +810,18 @@ Troubleshooting
 ```
 
 That is the actual objective of Session 21.
+
+---
+
+## 16. Demo & Presentation Deliverables
+
+The complete set of capstone deliverables is available in the [`demo/`](demo/) directory:
+
+- **Interactive Presentation Deck:** [`demo/Taskboard_DevOps_Architecture_and_Walkthrough.pptx`](demo/Taskboard_DevOps_Architecture_and_Walkthrough.pptx) (also mirrored at [`Taskboard_Presentation.pptx`](Taskboard_Presentation.pptx))
+- **Command Walkthrough Video (1080p Full HD):** [`demo/taskboard_command_walkthrough.mp4`](demo/taskboard_command_walkthrough.mp4)
+- **High-Resolution Architectural Diagrams:** [`demo/assets/`](demo/assets/)
+  - System Architecture: [`demo/assets/diagram_system_architecture.png`](demo/assets/diagram_system_architecture.png)
+  - CI/CD & DevSecOps: [`demo/assets/diagram_cicd_pipeline.png`](demo/assets/diagram_cicd_pipeline.png)
+  - AWS Terraform Topology: [`demo/assets/diagram_aws_terraform.png`](demo/assets/diagram_aws_terraform.png)
+  - Kubernetes & Helm: [`demo/assets/diagram_k8s_helm.png`](demo/assets/diagram_k8s_helm.png)
+  - Observability & Triage: [`demo/assets/diagram_observability_troubleshooting.png`](demo/assets/diagram_observability_troubleshooting.png)
